@@ -269,7 +269,7 @@ already_set:
 
 int __maybe_unused ti_i2c_eeprom_am_get(int bus_addr, int dev_addr)
 {
-	int rc;
+	/*int rc;*/
 	struct ti_am_eeprom am_ep;
 	struct ti_common_eeprom *ep;
 
@@ -286,13 +286,13 @@ int __maybe_unused ti_i2c_eeprom_am_get(int bus_addr, int dev_addr)
 	ep->serial[0] = 0x0;
 	ep->config[0] = 0x0;
 
-	rc = ti_i2c_eeprom_get(bus_addr, dev_addr, TI_EEPROM_HEADER_MAGIC,
+	/*rc = ti_i2c_eeprom_get(bus_addr, dev_addr, TI_EEPROM_HEADER_MAGIC,
 			       sizeof(am_ep), (uint8_t *)&am_ep);
 	if (rc)
-		return rc;
+		return rc;*/
 
 	ep->header = am_ep.header;
-	strlcpy(ep->name, am_ep.name, TI_EEPROM_HDR_NAME_LEN + 1);
+	strlcpy(ep->name, "AM43_IDK", TI_EEPROM_HDR_NAME_LEN + 1); //SC3
 	ti_eeprom_string_cleanup(ep->name);
 
 	/* BeagleBone Green '1' eeprom, board_rev: 0x1a 0x00 0x00 0x00 */
