@@ -189,18 +189,32 @@
 
 	cpsw_default: cpsw_default {
 		pinctrl-single,pins = <
-			AM4372_IOPAD(0x92c, PIN_OUTPUT_PULLDOWN | MUX_MODE2)	/* mii1_txclk.rgmii1_tclk */
-			AM4372_IOPAD(0x914, PIN_OUTPUT_PULLDOWN | MUX_MODE2)	/* mii1_txen.rgmii1_tctl */
-			AM4372_IOPAD(0x928, PIN_OUTPUT_PULLDOWN | MUX_MODE2)	/* mii1_txd0.rgmii1_td0 */
-			AM4372_IOPAD(0x924, PIN_OUTPUT_PULLDOWN | MUX_MODE2)	/* mii1_txd1.rgmii1_td1 */
-			AM4372_IOPAD(0x920, PIN_OUTPUT_PULLDOWN | MUX_MODE2)	/* mii1_txd0.rgmii1_td2 */
-			AM4372_IOPAD(0x91c, PIN_OUTPUT_PULLDOWN | MUX_MODE2)	/* mii1_txd1.rgmii1_td3 */
-			AM4372_IOPAD(0x930, PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxclk.rmii1_rclk */
-			AM4372_IOPAD(0x918, PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxdv.rgmii1_rctl */
-			AM4372_IOPAD(0x940, PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxd0.rgmii1_rd0 */
-			AM4372_IOPAD(0x93c, PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxd1.rgmii1_rd1 */
-			AM4372_IOPAD(0x938, PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxd0.rgmii1_rd2 */
-			AM4372_IOPAD(0x934, PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxd1.rgmii1_rd3 */
+			AM4372_IOPAD(0x92c, PIN_OUTPUT | MUX_MODE2)	/* mii1_txclk.rgmii1_tclk */
+			AM4372_IOPAD(0x914, PIN_OUTPUT | MUX_MODE2)	/* mii1_txen.rgmii1_tctl */
+			AM4372_IOPAD(0x928, PIN_OUTPUT | MUX_MODE2)	/* mii1_txd0.rgmii1_td0 */
+			AM4372_IOPAD(0x924, PIN_OUTPUT | MUX_MODE2)	/* mii1_txd1.rgmii1_td1 */
+			AM4372_IOPAD(0x920, PIN_OUTPUT | MUX_MODE2)	/* mii1_txd0.rgmii1_td2 */
+			AM4372_IOPAD(0x91c, PIN_OUTPUT | MUX_MODE2)	/* mii1_txd1.rgmii1_td3 */
+			AM4372_IOPAD(0x930, PIN_INPUT | MUX_MODE2)	/* mii1_rxclk.rmii1_rclk */
+			AM4372_IOPAD(0x918, PIN_INPUT | MUX_MODE2)	/* mii1_rxdv.rgmii1_rctl */
+			AM4372_IOPAD(0x940, PIN_INPUT | MUX_MODE2)	/* mii1_rxd0.rgmii1_rd0 */
+			AM4372_IOPAD(0x93c, PIN_INPUT | MUX_MODE2)	/* mii1_rxd1.rgmii1_rd1 */
+			AM4372_IOPAD(0x938, PIN_INPUT | MUX_MODE2)	/* mii1_rxd0.rgmii1_rd2 */
+			AM4372_IOPAD(0x934, PIN_INPUT | MUX_MODE2)	/* mii1_rxd1.rgmii1_rd3 */
+
+			/* Slave 2 */
+			AM4372_IOPAD(0x858, PIN_OUTPUT | MUX_MODE2)	/* gpmc_a6.rgmii2_tclk */
+			AM4372_IOPAD(0x840, PIN_OUTPUT | MUX_MODE2)	/* gpmc_a0.rgmii2_tctl */
+			AM4372_IOPAD(0x854, PIN_OUTPUT | MUX_MODE2)	/* gpmc_a5.rgmii2_td0 */
+			AM4372_IOPAD(0x850, PIN_OUTPUT | MUX_MODE2)	/* gpmc_a4.rgmii2_td1 */
+			AM4372_IOPAD(0x84c, PIN_OUTPUT | MUX_MODE2)	/* gpmc_a3.rgmii2_td2 */
+			AM4372_IOPAD(0x848, PIN_OUTPUT | MUX_MODE2)	/* gpmc_a2.rgmii2_td3 */
+			AM4372_IOPAD(0x85c, PIN_INPUT | MUX_MODE2)	/* gpmc_a7.rgmii2_rclk */
+			AM4372_IOPAD(0x844, PIN_INPUT | MUX_MODE2)	/* gpmc_a1.rgmii2_rtcl */
+			AM4372_IOPAD(0x86c, PIN_INPUT | MUX_MODE2)	/* gpmc_a11.rgmii2_rd0 */
+			AM4372_IOPAD(0x868, PIN_INPUT | MUX_MODE2)	/* gpmc_a10.rgmii2_rd1 */
+			AM4372_IOPAD(0x864, PIN_INPUT | MUX_MODE2)	/* gpmc_a9.rgmii2_rd2 */
+			AM4372_IOPAD(0x860, PIN_INPUT | MUX_MODE2)	/* gpmc_a8.rgmii2_rd3 */
 		>;
 	};
 
@@ -218,14 +232,28 @@
 			AM4372_IOPAD(0x93c, PIN_INPUT_PULLDOWN | MUX_MODE7)
 			AM4372_IOPAD(0x938, PIN_INPUT_PULLDOWN | MUX_MODE7)
 			AM4372_IOPAD(0x934, PIN_INPUT_PULLDOWN | MUX_MODE7)
+
+			/* Slave 2 reset value */
+			AM4372_IOPAD(0x858, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x840, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x854, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x850, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x84c, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x848, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x85c, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x844, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x86c, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x868, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x864, PIN_INPUT_PULLDOWN | MUX_MODE7)
+			AM4372_IOPAD(0x860, PIN_INPUT_PULLDOWN | MUX_MODE7)
 		>;
 	};
 
 	davinci_mdio_default: davinci_mdio_default {
 		pinctrl-single,pins = <
 			/* MDIO */
-			AM4372_IOPAD(0x948, PIN_INPUT_PULLUP | SLEWCTRL_FAST | MUX_MODE0)	/* mdio_data.mdio_data */
-			AM4372_IOPAD(0x94c, PIN_OUTPUT_PULLUP | MUX_MODE0)			/* mdio_clk.mdio_clk */
+			AM4372_IOPAD(0x948, PIN_INPUT | SLEWCTRL_FAST | MUX_MODE0)	/* mdio_data.mdio_data */
+			AM4372_IOPAD(0x94c, PIN_OUTPUT | MUX_MODE0)			/* mdio_clk.mdio_clk */
 		>;
 	};
 
@@ -273,17 +301,60 @@
 		reg = <0x50>;
 	};
 
-	tps: tps62362@60 {
-		compatible = "ti,tps62362";
-		reg = <0x60>;
-		regulator-name = "VDD_MPU";
-		regulator-min-microvolt = <950000>;
-		regulator-max-microvolt = <1330000>;
-		regulator-boot-on;
-		regulator-always-on;
-		ti,vsel0-state-high;
-		ti,vsel1-state-high;
-		vin-supply = <&v3_3d>;
+	tps: tps65218@24 {
+		reg = <0x24>;
+		compatible = "ti,tps65218";
+		interrupts = <GIC_SPI 7 IRQ_TYPE_NONE>; /* NMIn */
+		interrupt-controller;
+		#interrupt-cells = <2>;
+
+		dcdc1: regulator-dcdc1 {
+			compatible = "ti,tps65218-dcdc1";
+			regulator-name = "vdd_core";
+			regulator-min-microvolt = <912000>;
+			regulator-max-microvolt = <1144000>;
+			regulator-boot-on;
+			regulator-always-on;
+		};
+
+		dcdc2: regulator-dcdc2 {
+			compatible = "ti,tps65218-dcdc2";
+			regulator-name = "vdd_mpu";
+			regulator-min-microvolt = <912000>;
+			regulator-max-microvolt = <1378000>;
+			regulator-boot-on;
+			regulator-always-on;
+		};
+
+		dcdc3: regulator-dcdc3 {
+			compatible = "ti,tps65218-dcdc3";
+			regulator-name = "vdcdc3";
+			regulator-min-microvolt = <1500000>;
+			regulator-max-microvolt = <1500000>;
+			regulator-boot-on;
+			regulator-always-on;
+		};
+		dcdc5: regulator-dcdc5 {
+			compatible = "ti,tps65218-dcdc5";
+			regulator-name = "v1_0bat";
+			regulator-min-microvolt = <1000000>;
+			regulator-max-microvolt = <1000000>;
+		};
+
+		dcdc6: regulator-dcdc6 {
+			compatible = "ti,tps65218-dcdc6";
+			regulator-name = "v1_8bat";
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
+		};
+
+		ldo1: regulator-ldo1 {
+			compatible = "ti,tps65218-ldo1";
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
+			regulator-boot-on;
+			regulator-always-on;
+		};
 	};
 };
 
@@ -385,10 +456,10 @@
 };
 
 &mac {
-	slaves = <1>;
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&cpsw_default>;
 	pinctrl-1 = <&cpsw_sleep>;
+	dual_emac = <1>;
 	status = "okay";
 };
 
@@ -398,8 +469,12 @@
 	pinctrl-1 = <&davinci_mdio_sleep>;
 	status = "okay";
 
-	ethphy0: ethernet-phy@0 {
-		reg = <0>;
+	ethphy0: ethernet-phy@4 {
+		reg = <4>;
+	};
+
+	ethphy1: ethernet-phy@5 {
+		reg = <5>;
 	};
 };
 
