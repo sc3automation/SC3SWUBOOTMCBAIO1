@@ -118,7 +118,7 @@
 	DEFAULT_FIT_TI_ARGS \
 	"fdtfile=undefined\0" \
 	"boot=mmc\0" \
-	"bootpart=0:2\0" \
+	"bootpart=1:2\0" \
 	"bootdir=/boot\0" \
 	"bootfile=zImage\0" \
 	"console=ttyO0,115200n8\0" \

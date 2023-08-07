@@ -24,6 +24,20 @@ static struct module_pin_mux mmc0_pin_mux[] = {
 	{-1},
 };
 
+static struct module_pin_mux mmc1_pin_mux[] = {
+    {OFFSET(gpmc_csn1), (MODE(2) | PULLUDDIS | RXACTIVE)},
+    {OFFSET(gpmc_csn2), (MODE(2) | PULLUP_EN | RXACTIVE)},
+    {OFFSET(gpmc_ad8),  (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat0 */
+    {OFFSET(gpmc_ad9),  (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat1 */
+    {OFFSET(gpmc_ad10), (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat2 */
+    {OFFSET(gpmc_ad11), (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat3 */
+    {OFFSET(gpmc_ad12), (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat4 */
+    {OFFSET(gpmc_ad13), (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat5 */
+    {OFFSET(gpmc_ad14), (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat6 */
+    {OFFSET(gpmc_ad15), (MODE(2) | PULLUP_EN | RXACTIVE)}, /* mmc1_dat7 */
+    {-1},
+};
+
 static struct module_pin_mux i2c0_pin_mux[] = {
 	{OFFSET(i2c0_sda), (MODE(0) | PULLUP_EN | RXACTIVE | SLEWCTRL)},
 	{OFFSET(i2c0_scl), (MODE(0) | PULLUP_EN | RXACTIVE | SLEWCTRL)},
@@ -43,6 +57,7 @@ void enable_uart0_pin_mux(void)
 void enable_board_pin_mux(void)
 {
 	configure_module_pin_mux(mmc0_pin_mux);
+	configure_module_pin_mux(mmc1_pin_mux);
 	configure_module_pin_mux(i2c0_pin_mux);
 	configure_module_pin_mux(gpio5_7_pin_mux); /* DDR VTT Enable */
 }

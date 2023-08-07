@@ -156,6 +156,21 @@
 		>;
 	};
 
+	mmc2_pins_default: mmc2_pins_default {
+		pinctrl-single,pins = <
+			AM4372_IOPAD(0x880, PIN_INPUT | MUX_MODE2) /* (B9) gpmc_csn1.mmc1_clk */
+			AM4372_IOPAD(0x884, PIN_INPUT | MUX_MODE2) /* (F10) gpmc_csn2.mmc1_cmd */
+			AM4372_IOPAD(0x820, PIN_INPUT | MUX_MODE2) /* (B10) gpmc_ad8.mmc1_dat0 */
+			AM4372_IOPAD(0x824, PIN_INPUT | MUX_MODE2) /* (A10) gpmc_ad9.mmc1_dat1 */
+			AM4372_IOPAD(0x828, PIN_INPUT | MUX_MODE2) /* (F11) gpmc_ad10.mmc1_dat2 */
+			AM4372_IOPAD(0x82c, PIN_INPUT | MUX_MODE2) /* (D11) gpmc_ad11.mmc1_dat3 */
+			AM4372_IOPAD(0x830, PIN_INPUT | MUX_MODE2) /* (E11) gpmc_ad12.mmc1_dat4 */
+			AM4372_IOPAD(0x834, PIN_INPUT | MUX_MODE2) /* (C11) gpmc_ad13.mmc1_dat5 */
+			AM4372_IOPAD(0x838, PIN_INPUT | MUX_MODE2) /* (B11) gpmc_ad14.mmc1_dat6 */
+			AM4372_IOPAD(0x83c, PIN_INPUT | MUX_MODE2) /* (A11) gpmc_ad15.mmc1_dat7 */
+		>;
+	};
+
 	ecap0_pins: backlight_pins {
 		pinctrl-single,pins = <
 			0x164 MUX_MODE0       /* eCAP0_in_PWM0_out.eCAP0_in_PWM0_out MODE0 */
@@ -574,6 +589,15 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&mmc1_pins>;
 	cd-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+};
+
+&mmc2 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&mmc2_pins_default>;
+	vmmc-supply = <&vmmcsd_fixed>;
+	bus-width = <8>;
+	ti,non-removable;
 };
 
 &mmc3 {

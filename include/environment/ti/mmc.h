@@ -9,7 +9,7 @@
 #define __TI_MMC_H
 
 #define DEFAULT_MMC_TI_ARGS \
-	"mmcdev=0\0" \
+	"mmcdev=1\0" \
 	"mmcrootfstype=ext4 rootwait\0" \
 	"finduuid=part uuid ${boot} ${bootpart} uuid\0" \
 	"args_mmc=run finduuid;setenv bootargs console=${console} " \
